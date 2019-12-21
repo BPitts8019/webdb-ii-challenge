@@ -3,10 +3,10 @@ const CARS = "cars";
 exports.up = async function (knex) {
    await knex.schema.createTable(CARS, table => {
       table.increments();
-      table.integer("VIN").notNull();
-      table.text("make").notNull();
-      table.text("model").notNull();
-      table.integer("mileage").notNull();
+      table.integer("VIN").notNullable().unique();
+      table.text("make").notNullable();
+      table.text("model").notNullable();
+      table.integer("mileage").notNullable();
       table.text("transType");
       table.text("titleStatus");
    });
