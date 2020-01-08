@@ -10,8 +10,8 @@ const getCarById = (carId) => {
       .first();
 };
 
-const addCar = (data) => {
-
+const addCar = (newCar) => {
+   return db("cars").insert(newCar);
 };
 
 module.exports = {
