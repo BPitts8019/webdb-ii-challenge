@@ -1,8 +1,18 @@
 const db = require("../data/db-config");
 
-const getCars = () => {};
-const getCarById = () => {};
-const addCar = () => {};
+const getCars = () => {
+   return db("cars");
+};
+
+const getCarById = (carId) => {
+   return db("cars")
+      .where({id: carId})
+      .first();
+};
+
+const addCar = (data) => {
+
+};
 
 module.exports = {
    getCars,
